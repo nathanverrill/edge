@@ -4,13 +4,16 @@
 #include <Arduino_HTS221.h>
 #include <Arduino_LPS22HB.h>
 #include <Arduino_LSM9DS1.h>
+// TODO include sensor serial number in output
+// https://github.com/ricaun/ArduinoUniqueID
+// #include <ArduinoUniqueID.h>
 
 #define CONVERT_G_TO_MS2 9.80665f
 #define FREQUENCY_HZ 50
 #define INTERVAL_MS (1000 / (FREQUENCY_HZ + 1))
 
 // Device name
-const char *nameOfPeripheral = "Nano BLE Sense";
+const char *nameOfPeripheral = "Arduino Nano 33 BLE Sense";
 
 void setup()
 {
@@ -135,19 +138,7 @@ void sensors()
     atmosphericPressure = BARO.readPressure();
   }
 
-  Serial.print("{'proximity':")
-  Serial.print(proximity);
-  Serial.print('}\t');
-  Serial.print(gesture);
-  Serial.print('\t');
-  
-  Serial.print(r);
-  Serial.print('\t');
-  Serial.print(g);
-  Serial.print('\t');
-  Serial.print(b);
-  Serial.print('\t');
-  Serial.print(a);
+  Serial.print(nameOfPeripheral);
   Serial.print('\t');
   Serial.print(temperature);
   Serial.print('\t');
@@ -155,8 +146,6 @@ void sensors()
   Serial.print('\t');
   Serial.print(atmosphericPressure);
   Serial.print('\t');
-  
-  
   Serial.print(accelerometerX);
   Serial.print('\t');
   Serial.print(accelerometerY);
@@ -173,5 +162,24 @@ void sensors()
   Serial.print('\t');
   Serial.print(magnetometerY);
   Serial.print('\t');
-  Serial.println(magnetometerZ);
+  Serial.print(magnetometerZ);
+  Serial.print('\t');
+  Serial.print(proximity);
+  Serial.print('}\t');
+  Serial.print(gesture);
+  Serial.print('\t');
+  Serial.print(r);
+  Serial.print('\t');
+  Serial.print(g);
+  Serial.print('\t');
+  Serial.print(b);
+  Serial.print('\t');
+  Serial.print(a);
+  Serial.print('\t');
+  Serial.print('inference results placeholder');
+  Serial.print('\t');
+  Serial.print('inference model info placeholder');
+  Serial.print('\t');
+  Serial.print('temp|humidity|pressure|accelX|accelY|accelZ|gyroX|gyroY|gyroZ|magX|magY|magZ|proximity|gesture|lightColorR|lightColorG|lightColorB|lightColorA|inference|modelInfo|https://docs.arduino.cc/resources/datasheets/ABX00031-datasheet.pdf');
+  Serial.println('\t');    
 }
