@@ -1,5 +1,5 @@
-// Outputs all Arduino Nano BLE Sense data to terminal for the CLI forwarder
-// See https://docs.edgeimpulse.com/docs/cli-data-forwarder
+// output all sensor data
+// loop output is numeric for easy consumption into Edge Impulse and other tools that use serial data forwarders
 #include <Arduino_APDS9960.h>
 #include <Arduino_HTS221.h>
 #include <Arduino_LPS22HB.h>
@@ -14,6 +14,8 @@
 
 // Device name
 const char *nameOfPeripheral = "Arduino Nano 33 BLE Sense";
+const char *metadata = "device|softwareVersion|temp|humidity|pressure|accelX|accelY|accelZ|gyroX|gyroY|gyroZ|magX|magY|magZ|proximity|gesture|lightColorR|lightColorG|lightColorB|lightColorA|inferenceResults|mlModelInfo|docs.arduino.cc/resources/datasheets/ABX00031-datasheet.pdf";
+
 
 void setup()
 {
@@ -140,6 +142,8 @@ void sensors()
 
   Serial.print(nameOfPeripheral);
   Serial.print('\t');
+  Serial.print(1.0);
+  Serial.print('\t');
   Serial.print(temperature);
   Serial.print('\t');
   Serial.print(humidity);
@@ -176,10 +180,5 @@ void sensors()
   Serial.print('\t');
   Serial.print(a);
   Serial.print('\t');
-  Serial.print('inference results placeholder');
-  Serial.print('\t');
-  Serial.print('inference model info placeholder');
-  Serial.print('\t');
-  Serial.print('temp|humidity|pressure|accelX|accelY|accelZ|gyroX|gyroY|gyroZ|magX|magY|magZ|proximity|gesture|lightColorR|lightColorG|lightColorB|lightColorA|inference|modelInfo|https://docs.arduino.cc/resources/datasheets/ABX00031-datasheet.pdf');
-  Serial.println('\t');    
+  Serial.println(metadata);    
 }
