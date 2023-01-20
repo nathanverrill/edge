@@ -14,8 +14,24 @@
 
 // Device name
 const char *nameOfPeripheral = "Arduino Nano 33 BLE Sense";
-const char *metadata = "device|softwareVersion|temp|humidity|pressure|accelX|accelY|accelZ|gyroX|gyroY|gyroZ|magX|magY|magZ|proximity|gesture|lightColorR|lightColorG|lightColorB|lightColorA|inferenceResults|mlModelInfo|docs.arduino.cc/resources/datasheets/ABX00031-datasheet.pdf";
+const char *productDataSheet = "ABX00031-datasheet.pdf";
 
+// link to open source or secure source control
+const char *softwareSource = "https://github.com/nathanverrill/edge";
+
+// data column names
+// tab separatebed values for data; pipe separated for column names
+// while including outputing this string can degrade device performance it makes the device easier for downstream engineers to use
+// intended for prototyping, there are better ways
+// json output could also be used, but some streaming data processes what time series of numbers and then faster without parsing json
+// hosting script or application can transform into json and other representations as needed
+const char *metadata = "millis|temp|humidity|pressure|accelX|accelY|accelZ|gyroX|gyroY|gyroZ|magX|magY|magZ|proximity|gesture|lightColorR|lightColorG|lightColorB|lightColorA|inferenceResults|mlModelInfo|softwareVersion|softwareSource|device|productId|serialNumber|vendorId|datasheet|additionalMetaData";
+const char *additionalMetadata = "none"; // included as raw text
+
+// get these values with the Arduino Create Agent
+const char *serialNumber = "6514DA94E0BF0E08";
+const char *vendorId = "0x2341";
+const char *productId = "0x805a";
 
 void setup()
 {
@@ -74,6 +90,8 @@ float magnetometerZ;
 unsigned long lastLedReset = 0;
 unsigned long lastHtsUpdate = 0;
 unsigned long lastBaroUpdate = 0;
+
+float softwareVersion = 1.1;
 
 void loop()
 {
@@ -140,9 +158,7 @@ void sensors()
     atmosphericPressure = BARO.readPressure();
   }
 
-  Serial.print(nameOfPeripheral);
-  Serial.print('\t');
-  Serial.print(1.0);
+  Serial.print(millis());
   Serial.print('\t');
   Serial.print(temperature);
   Serial.print('\t');
@@ -179,6 +195,22 @@ void sensors()
   Serial.print(b);
   Serial.print('\t');
   Serial.print(a);
+  Serial.print('\t');
+  Serial.print(softwareVersion);
+  Serial.print('\t');
+  Serial.print(softwareSource);
+  Serial.print('\t');
+  Serial.print(nameOfPeripheral);
+  Serial.print('\t');
+  Serial.print(productId);
+  Serial.print('\t');
+  Serial.print(serialNumber);
+  Serial.print('\t');
+  Serial.print(vendorId);
+  Serial.print('\t');
+  Serial.print(productDataSheet);
+  Serial.print('\t');
+  Serial.print(additionalMetadata);
   Serial.print('\t');
   Serial.println(metadata);    
 }
