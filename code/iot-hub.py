@@ -65,11 +65,19 @@ async def main():
         print(messageenv)
         
         # test message
-        msg = '{{"environment": "dev", "messageType": "test", "deviceId": "rp4b", "metric": 1.2345}}'
-        messagetest = Message(msg)
-        messagetest.content_encoding = "utf-8"
-        messagetest.content_type = "application/json"
-        device_client.send_message(messagetest)        
+        metrics = []
+        metrics['environment'] = 'dev'
+        metrics['messageType'] = 'metrics-test'
+        metrics['deviceId'] = 'rp4b'
+        metrics['accX'] = 0.987
+        metrics['accY'] = 0.123
+        metrics['accZ'] = 0.314
+        
+        iothub_metrics = Message(json.dumps(metrics))
+        iothub_metrics.content_encoding = "utf-8"
+        iothub_metrics.content_type = "application/json"
+        device_client.send_message(iothub_metrics)      
+        print(mesiothub_metricssagetest)  
         
         
         
