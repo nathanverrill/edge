@@ -65,11 +65,12 @@ async def main():
         print(messageenv)
         
         # test message
-        msg = '{{"environment": "dev", "messageType": "test", "deviceId": "rp4b", "metric": 1.2345}}'
+        msg = '{{"environment": "dev", "messageType": "metrics-test", "deviceId": "rp4b", "metric_1": {metric_1}, "metric_2": {metric_2}}}'
         messagetest = Message(msg)
         messagetest.content_encoding = "utf-8"
         messagetest.content_type = "application/json"
-        device_client.send_message(messagetest)        
+        device_client.send_message(messagetest)      
+        print(messagetest)  
         
         
         
