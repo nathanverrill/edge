@@ -65,7 +65,7 @@ async def main():
         print(messageenv)
         
         # test message
-        metrics = []
+        metrics = {}
         metrics['environment'] = 'dev'
         metrics['messageType'] = 'metrics-test'
         metrics['deviceId'] = 'rp4b'
