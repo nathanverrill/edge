@@ -65,7 +65,7 @@ async def main():
         print(messageenv)
         
         # test message
-        msg = msg.format(hello="world")
+        msg = msg.format(metric=0.235)
         messagetest = Message(msg)
         messagetest.content_encoding = "utf-8"
         messagetest.content_type = "application/json"
