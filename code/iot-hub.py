@@ -65,7 +65,7 @@ async def main():
         print(messageenv)
         
         # test message
-        msg = msg.format(metric=0.235)
+        msg = '{{"environment": "dev", "messageType": "test", "deviceId": "rp4b", "metric": 1.2345}}'
         messagetest = Message(msg)
         messagetest.content_encoding = "utf-8"
         messagetest.content_type = "application/json"
