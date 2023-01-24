@@ -1,0 +1,67 @@
+{
+    "proximity": proximity,
+    "gesture": gesture,
+    "colorR": r,
+    "colorG": g,
+    "colorB": b,
+    "colorA": a,
+    "tempC": temperature,
+    "humidity": humidity,
+    "pressure": atmosphericPressure,
+    "accelX": accelerometerX,
+    "accelY": accelerometerY,
+    "accelZ": accelerometerZ,
+    "gyroX": gyroscopeX,
+    "gyroY": gyroscopeY,
+    "gyroZ": gyroscopeZ,
+    "magX": magnetometerX,
+    "magY": magnetometerY,
+    "magZ": magnetometerZ,
+    "sensors": {
+        get from spec sheet
+    }        
+}
+
+
+
+  Serial.print()
+  Serial.print("{'proximity':")
+  Serial.print(proximity);
+  Serial.print('}\t');
+  Serial.print(gesture);
+  Serial.print('\t');
+  
+  Serial.print(r);
+  Serial.print('\t');
+  Serial.print(g);
+  Serial.print('\t');
+  Serial.print(b);
+  Serial.print('\t');
+  Serial.print(a);
+  Serial.print('\t');
+  Serial.print(temperature);
+  Serial.print('\t');
+  Serial.print(humidity);
+  Serial.print('\t');
+  Serial.print(atmosphericPressure);
+  Serial.print('\t');
+  
+  
+  Serial.print(accelerometerX);
+  Serial.print('\t');
+  Serial.print(accelerometerY);
+  Serial.print('\t');
+  Serial.print(accelerometerZ);
+  Serial.print('\t');
+  Serial.print(gyroscopeX);
+  Serial.print('\t');
+  Serial.print(gyroscopeY);
+  Serial.print('\t');
+  Serial.print(gyroscopeZ);
+  Serial.print('\t');
+  Serial.print(magnetometerX);
+  Serial.print('\t');
+  Serial.print(magnetometerY);
+  Serial.print('\t');
+  Serial.println(magnetometerZ);
+}

@@ -1,0 +1,56 @@
+{
+  "body": {
+    "timestamp": "Wed Nov 30 2022 09:07:10 GMT-0500 (Eastern Standard Time)",
+    "location": {
+      "latitude": 123.456,
+      "longitude": 38.603367,
+      "altitude": 34000.45,
+      "altitudeType": "AGL",
+      "altitudeUOM": "m"
+    },
+    "data": {
+      "accelerometerX": -9.81,
+      "accelerometerY": -9.81,
+      "accelerometerZ": -9.81,
+      "gyroscopeX": -9.81,
+      "gyroscopeY": -9.81,
+      "gyroscopeZ": -9.81,
+      "magnetometerX": -9.81,
+      "magnetometerY": -9.81,
+      "magnetometerZ": -9.81,
+      "temperature": 23.5794921875,
+      "humidity": 40.949127387513606,
+      "pressure": 1019.5867282819255,
+      "cpu": "1.0",
+      "memorFree": 3228.5,
+      "memoryTotal": 3755.5,
+      "memory": "3228.5MB free / 3744.5MB total ( 13.8% )",
+      "disk_info": "100.6GB free / 117.2GB total ( 10.5% )"
+    },
+    "sensor": {
+      "sensor_type": "IMU",
+      "sensor_name": "9-DoF IMU (Inertial Measurement Unit)",
+      "sensor_mfr_datasheet": "LSM9DS1_Datasheet.pdf",
+      "sensor_mfr_id": "LSM9DS1",
+      "accelerometerUOM": "m/s2",
+      "gyroscopeUOM": "mV/deg/s",
+      "magnetometerUOM": "G"
+    },
+    "metadata": {
+      "messageType": "environment-status",
+      "deviceId": "rp4b",
+      "udtoTopic": "generic",
+      "environment": "dev",
+      "board_name": "Arduino Nano 33 BLE Sense",
+      "board_product_datasheet": "ABX00031-datasheet.pdf",
+      "board_product_id": "0x805a",
+      "board_product_serial_number": "6514DA94E0BF0E08",
+      "alertText": "excessive vibration detected",
+      "severity": "high",
+      "tags": ["your", "tag", "here"],
+      "remarks": "anything"
+    },
+    "uuid": "b9e8174b-23b0-4d96-8b3e-1f5ad1dbd1b3"
+  },
+  "enqueuedTime": "Wed Nov 30 2022 09:07:10 GMT-0500 (Eastern Standard Time)"
+}

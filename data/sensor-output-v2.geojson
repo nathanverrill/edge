@@ -1,0 +1,35 @@
+{
+    "timestamp": "2022-09-20T09:14:21.315-05:00",
+    "lat": 123.456,
+    "lon": 38.603367,
+    "alt": 34000.45,   
+    "properties": {  
+        "accelerometerX": [-9.81],
+        "accelerometerY": [-9.81],
+        "accelerometerZ": [-9.81],
+        "gyroscopeX": [-9.81],
+        "gyroscopeY": [-9.81],
+        "gyroscopeZ": [-9.81],   
+        "magnetometerX": [-9.81],
+        "magnetometerY": [-9.81],
+        "magnetometerZ": [-9.81],
+        "sensor_type": "IMU",        
+        "sensor": "LSM9DS1",
+        "sensor_name": "9-DoF IMU (Inertial Measurement Unit)",
+        "sensor_datasheet":"LSM9DS1_Datasheet.pdf",
+        "board_name": "Arduino Nano 33 BLE Sense",
+        "board_product_datasheet": "ABX00031-datasheet.pdf",
+        "board_product_id": "0x805a",
+        "board_product_serial_number": "6514DA94E0BF0E08",
+        "alert": "",
+        "severity": "",
+        "tags": [],
+        "remarks": ""
+    }
+}
+
+
+
+
+
+
