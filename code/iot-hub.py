@@ -72,6 +72,12 @@ async def main():
         metrics['accX'] = 0.987
         metrics['accY'] = 0.123
         metrics['accZ'] = 0.314
+        metrics['gyroX'] = 1.987
+        metrics['gyroY'] = 2.123
+        metrics['gyroZ'] = 3.314        
+        metrics['magX'] = 11.987
+        metrics['magY'] = 22.123
+        metrics['magZ'] = 123.314            
         
         iothub_metrics = Message(json.dumps(metrics))
         iothub_metrics.content_encoding = "utf-8"
