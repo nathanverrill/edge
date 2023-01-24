@@ -77,7 +77,7 @@ async def main():
         iothub_metrics.content_encoding = "utf-8"
         iothub_metrics.content_type = "application/json"
         device_client.send_message(iothub_metrics)      
-        print(mesiothub_metricssagetest)  
+        print(json.dumps(metrics))  
         
         
         
