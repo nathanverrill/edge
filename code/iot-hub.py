@@ -85,8 +85,6 @@ async def main():
         device_client.send_message(iothub_metrics)      
         print(json.dumps(metrics))  
         
-        
-        
         time.sleep(5)
 
     # finally, shut down the client
